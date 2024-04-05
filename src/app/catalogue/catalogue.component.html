@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
+        <div class="card">
+          <img [src]="'assets/' + product.image" class="card-img-top" [alt]="product.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.weight }} - ${{ product.price }}</p>
+            <button *ngIf="!cartItems[product.name]" class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+            <div *ngIf="cartItems[product.name]" class="quantity-control">
+              <button class="btn btn-secondary" (click)="removeFromCart(product)">-</button>
+              <span>{{ cartItems[product.name] }}</span>
+              <button class="btn btn-secondary" (click)="addToCart(product)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-button">
+    <button class="btn btn-primary" (click)="navigateToCart()">
+      <i class="fas fa-shopping-cart"></i> Cart
+    </button>
+  </div>

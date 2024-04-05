@@ -1,0 +1,21 @@
+.card {
+    height: 100%;
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        margin: 0 10px;
+      }
+    }
+  }
+  
+  .cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
